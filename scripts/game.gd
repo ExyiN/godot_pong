@@ -25,7 +25,6 @@ func _process(_delta: float) -> void:
 func start_game() -> void:
 	hud_score_p1.text = str(score_p1)
 	hud_score_p2.text = str(score_p2)
-	hud_message.text = "First to " + str(max_score)
 	paddle_p1.reset()
 	paddle_p2.reset()
 	paddle_p1.show()
@@ -37,6 +36,7 @@ func game_over() -> void:
 		hud_message.text = "Player 1 wins!"
 	else:
 		hud_message.text = "Player 2 wins!"
+	hud_message.show()
 	hud_play_button.show()
 	ball.reset()
 	score_p1 = 0
