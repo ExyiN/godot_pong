@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxqw7vqdme4l2"]
+
+[ext_resource type="Script" uid="uid://bovcejl7e5ufw" path="res://scripts/score_detector.gd" id="1_cwxlk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kesh2"]
+size = Vector2(20, 720)
+
+[node name="ScoreDetector" type="Area2D"]
+script = ExtResource("1_cwxlk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kesh2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

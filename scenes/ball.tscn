@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://crd2follmab1j"]
 
-[ext_resource type="Script" uid="uid://bsrrgca873brj" path="res://ball.gd" id="1_x8fbi"]
+[ext_resource type="Script" uid="uid://bsrrgca873brj" path="res://scripts/ball.gd" id="1_x8fbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbx31"]
 size = Vector2(16, 16)
@@ -11,16 +11,10 @@ script = ExtResource("1_x8fbi")
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 16.0
-offset_bottom = 16.0
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_cbx31")
-
-[node name="SignalTimer" type="Timer" parent="."]
-wait_time = 0.4
-autostart = true
-
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
-[connection signal="timeout" from="SignalTimer" to="." method="_on_signal_timer_timeout"]
