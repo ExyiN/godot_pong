@@ -2,7 +2,7 @@ class_name Ball
 extends RigidBody2D
 
 @export var speed: float = DEFAULT_SPEED
-@export var bounce_acceleration_multiplier: float = 1.05
+@export var bounce_acceleration_multiplier: float = 1.1
 
 @onready var screen_size: Vector2 = get_viewport_rect().size
 @onready var bounce_sound: AudioStreamPlayer2D = $BounceSound
