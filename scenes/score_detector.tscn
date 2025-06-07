@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxqw7vqdme4l2"]
+[gd_scene load_steps=4 format=3 uid="uid://bxqw7vqdme4l2"]
 
 [ext_resource type="Script" uid="uid://bovcejl7e5ufw" path="res://scripts/score_detector.gd" id="1_cwxlk"]
+[ext_resource type="AudioStream" uid="uid://g8t6aos4wl12" path="res://assets/sounds/ping_pong_8bit_beeep.ogg" id="2_qsq03"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kesh2"]
 size = Vector2(20, 720)
@@ -10,5 +11,8 @@ script = ExtResource("1_cwxlk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kesh2")
+
+[node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_qsq03")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
