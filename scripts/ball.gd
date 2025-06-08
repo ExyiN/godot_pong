@@ -12,7 +12,7 @@ const DEFAULT_SPEED: float = 300.0
 var velocity: Vector2 = Vector2.ZERO
 
 func _process(delta: float) -> void:
-	var collision_data := move_and_collide(velocity * speed * delta)
+	var collision_data: KinematicCollision2D = move_and_collide(velocity * speed * delta)
 	if collision_data:
 		velocity = velocity.bounce(collision_data.get_normal())
 		play_bounce_sound()
